@@ -8,14 +8,13 @@ class App extends Component {
     super(props);
 
     this.state = {
-      values: [1, 2, 3, 4, 5]
+      values: [{a:1}, {a:2}, {a:3}, {a:4}, {a:5}]
     }
   }
 
   onButtonClick = () => {
-    debugger
     this.setState({
-      values: [6,7,8,9,10]
+      values: [{a:6},{a:7},{a:8},{a:9},{a:10}]
     });
   }
 
@@ -23,7 +22,7 @@ class App extends Component {
     return (
       <div>
         <ol>
-          {this.state.values.map((v)=><List value={v}></List>)}
+          {this.state.values.map((v)=><List value={v.a}></List>)}
         </ol>
         <button onClick={this.onButtonClick}>Change Value</button>
       </div>
